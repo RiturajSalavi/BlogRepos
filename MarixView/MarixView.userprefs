@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{79263C36-2B26-41ED-B973-D8A88FD9BF86}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MarixView/MarixViewPage.xaml.cs">
+    <Files>
+      <File FileName="MarixView/MarixViewPage.xaml" Line="109" Column="98" />
+      <File FileName="MarixView/MarixViewPage.xaml.cs" Line="19" Column="3" />
+      <File FileName="MarixView/DocumentViewModel.cs" Line="94" Column="5" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="MarixView/obj/Debug/MarixView.MarixViewPage.xaml.g.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MarixView.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.32CCBBFD-6484-4E64-9E98-4280236198B8" />
+</Properties>

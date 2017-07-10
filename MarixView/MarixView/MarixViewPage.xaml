@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:MarixView"
+		x:Class="MarixView.MarixViewPage"
+		Padding="10,40,10,10"
+		SizeChanged="Handle_SizeChanged">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="labelTest" TargetType="Label">
+				<Setter Property="FontSize" Value="Small"></Setter>
+			</Style>
+
+			<DataTemplate x:Key="DocViewTabLandscape">
+				<ViewCell>
+					<Grid Margin="4,10,4,10">
+						 <Grid.RowDefinitions>
+							<RowDefinition Height="*"></RowDefinition>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="0" IsVisible="{Binding DocumentViewRowCollection[0].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[0].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="1" IsVisible="{Binding DocumentViewRowCollection[1].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[1].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="2" IsVisible="{Binding DocumentViewRowCollection[2].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF" ></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[2].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="3" IsVisible="{Binding DocumentViewRowCollection[3].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[3].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="4" IsVisible="{Binding DocumentViewRowCollection[4].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[4].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+
+			<DataTemplate x:Key="DocViewTabPotrait">
+				<ViewCell>
+					<Grid Margin="4,10,4,10">
+						 <Grid.RowDefinitions>
+							<RowDefinition Height="*"></RowDefinition>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="0" IsVisible="{Binding DocumentViewRowCollection[0].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[0].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="1" IsVisible="{Binding DocumentViewRowCollection[1].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF"></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[1].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+
+						<Frame WidthRequest="60" HeightRequest="60" HasShadow="true" Grid.Row ="0" Grid.Column="2" IsVisible="{Binding DocumentViewRowCollection[2].IsNotDummy}">
+							<StackLayout>
+								<BoxView WidthRequest="36" HeightRequest="36" BackgroundColor="#00CCFF" ></BoxView>
+								<Label Text= "{Binding DocumentViewRowCollection[2].Name}" Style="{x:StaticResource labelTest}"/>
+							</StackLayout>
+						</Frame>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+
+			<local:DocumentViewTemplateSelector x:Key="documentViewTemplateSelector"
+				 PortriatTemplate="{StaticResource DocViewTabPotrait }"
+				 LandscapeTemplate="{StaticResource DocViewTabLandscape}"/>
+			
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ListView x:Name="documentListView" ItemTemplate="{StaticResource documentViewTemplateSelector}"  >
+	</ListView>
+</ContentPage>
